@@ -1,0 +1,16 @@
+gcloud run deploy techbarvue \
+  --source . \
+  --set-env-vars "PROJECT_ID=your-project-id" \
+  --set-env-vars "REGION=your-region" \
+  --set-env-vars "BUCKET_NAME=your-bucket-name" \
+  --set-env-vars "GEMINI_API_KEY=YOUR_GEMINI_API_KEY" \
+  --set-env-vars "FUNCTIONS_EMULATOR=false" \
+  --set-env-vars "DB_HOST=/cloudsql/your-project-id:your-region:your-db-instance" \
+  --set-env-vars "DB_NAME=your_db_name" \
+  --set-env-vars "DB_USER=your_db_user" \
+  --set-env-vars "DB_PASSWORD=your_db_password" \
+  --set-env-vars "DB_INSTANCE_NAME=your-db-instance" \
+  --set-env-vars "CLOUD_SQL_CONNECTION_NAME=your-project-id:your-region:your-db-instance" \
+  --add-cloudsql-instances "your-project-id:your-region:your-db-instance" \
+  --region your-region \
+  --allow-unauthenticated
