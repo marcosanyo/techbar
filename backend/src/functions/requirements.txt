@@ -1,0 +1,13 @@
+# requirements.txt
+functions-framework
+google-cloud-storage
+google-cloud-aiplatform>=1.38
+google-genai
+psycopg2-binary
+fastapi
+python-dotenv
+python-multipart
+streamlit
+streamlit_autorefresh
+numpy
+uvicorn

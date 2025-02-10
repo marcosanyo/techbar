@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ../:/workspace:cached
+      - ${HOME}/.gitconfig:/root/.gitconfig:ro
+      - ${HOME}/.ssh:/root/.ssh:ro
+      - ${HOME}/.config/gcloud:/root/.config/gcloud:cached
+    command: sleep infinity
+    env_file:
+      - ../.env
+    ports:
+      - "3003:3000" # React開発サーバー
+      - "8083:8080" # Python開発サーバー
+    networks:
+      - dev-network
+
+networks:
+  dev-network:
+    driver: bridge
